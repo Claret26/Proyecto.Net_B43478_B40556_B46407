@@ -25,6 +25,7 @@ namespace ProyectoLibrary.Common.Domain
         private String clave;
         private Boolean solicitanteActivo;
         private Boolean experienciaLaboral;
+        private LinkedList<EspecialidadSolicitud> listaEspecialidadesSolicitante;
 
         public SolicitanteTrabajo(int idSolicitante, String nombre, String apellidos, String direccion,
            String ciudad, String provincia, int numeroCelular, int telefonoCasa, String email, DateTime fechaNacimiento,
@@ -258,6 +259,19 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 experienciaLaboral = value;
+            }
+        }
+
+        public LinkedList<EspecialidadSolicitud> ListaEspecialidadesSolicitante
+        {
+            get
+            {
+                return listaEspecialidadesSolicitante;
+            }
+
+            set
+            {
+                listaEspecialidadesSolicitante = value;
             }
         }
     }
