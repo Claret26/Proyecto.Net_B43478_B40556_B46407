@@ -11,10 +11,12 @@ namespace ProyectoLibrary.Common.Domain
         private SolicitanteTrabajo solicitanteTrabajo;
         private PuestoOfertado puestoOfertado;
         private Boolean activo;
+        
 
         public SolicitantePuestoOfertado()
         {
-
+            this.solicitanteTrabajo = new SolicitanteTrabajo();
+            this.puestoOfertado = new PuestoOfertado();
         }
 
         public SolicitanteTrabajo SolicitanteTrabajo

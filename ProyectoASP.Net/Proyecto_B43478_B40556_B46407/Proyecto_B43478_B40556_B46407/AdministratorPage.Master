@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdministratorPage.master.cs" Inherits="Proyecto_B43478_B40556_B46407.AdministratorPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estyle.css" />
+</head>
+<body>
+    <header class="encabezado">
+         <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul id="NavbarPrincipal" class="nav navbar-nav" runat="server">
+                    <li id="Home" class="active" runat="server"><a href="~/Principal.aspx">Home</a></li>
+                    <li runat="server"><a href="Principal.aspx" id="Inicio">Inicio</a></li>
+                    <li id="AgregarEmpresa" runat="server"><a href="Administrador/PrincipalAdministrador.aspx">Agregar mi empresa</a></li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="CerrarSesion" runat="server"><a href="IniciarSesion.aspx"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+     </header>
+    <div class="col-lg-2">
+        <div id="barraPerfil" class="row">
+            <ul class="nav nav-pills nav-stacked" runat="server">
+                <li class="active"><a href="#">Administrador</a></li>
+                <li><a href="#">Puestos Solicitados</a></li>
+                <li><a href="#">Entrevistas</a></li>
+                <li><a href="Reportes.aspx">Reportes</a></li>
+            </ul>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
+

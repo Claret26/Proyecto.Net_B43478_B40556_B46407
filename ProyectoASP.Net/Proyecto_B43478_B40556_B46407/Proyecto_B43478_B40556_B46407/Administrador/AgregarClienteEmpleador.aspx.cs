@@ -39,7 +39,7 @@ namespace Proyecto_B43478_B40556_B46407.Administrador
             contactoEmpleador.NombreUsuario = "Prueba";
             contactoEmpleador.ClaveAcceso = "Prueba";
 
-            ClienteEmpleadorData clienteEmpleadorData = new ClienteEmpleadorData(WebConfigurationManager.ConnectionStrings["LibreriaCeibaBD"].ConnectionString);
+            ClienteEmpleadorData clienteEmpleadorData = new ClienteEmpleadorData(WebConfigurationManager.ConnectionStrings["BuscandoEmpleo"].ConnectionString);
             clienteEmpleadorData.InsertarClienteEmpleador(clienteEmpleador, contactoEmpleador);
 
             Email correo = new Email();

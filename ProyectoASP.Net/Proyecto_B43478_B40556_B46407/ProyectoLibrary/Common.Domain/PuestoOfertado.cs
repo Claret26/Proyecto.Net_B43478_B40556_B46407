@@ -11,7 +11,7 @@ namespace ProyectoLibrary.Common.Domain
         private int clavePuesto;
         private String descripcionPuesto;
         private String experienciaRequerida;
-        private Boolean abierto;
+        private int abierto;
         private int numeroVacantes;
         private String diasLaborar;
         private String horaEntrada;
@@ -21,6 +21,12 @@ namespace ProyectoLibrary.Common.Domain
         private String ciudad;
         private ClienteEmpleador clienteEmpleador;
         private CategoriaPuesto categoriaPuesto;
+
+        public PuestoOfertado()
+        {
+            this.clienteEmpleador = new ClienteEmpleador();
+            this.categoriaPuesto = new CategoriaPuesto();
+        }
 
         public int ClavePuesto
         {
@@ -61,7 +67,7 @@ namespace ProyectoLibrary.Common.Domain
             }
         }
 
-        public bool Abierto
+        public int Abierto
         {
             get
             {

@@ -12,6 +12,7 @@ namespace ProyectoLibrary.DataAccess
     {
 
         private String cadenaConexion;
+        private List<ClienteEmpleador> listaClientes;
 
         public ClienteEmpleadorData(String cadenaConexion)
         {
@@ -90,6 +91,54 @@ namespace ProyectoLibrary.DataAccess
                 conexion.Dispose();
             }
             return clienteEmpleador;
+        }
+
+        public List<ClienteEmpleador> GetClientesEmpleadores()
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador", conexion);
+            conexion.Open();
+            SqlDataReader drClientes = cmdClientes.ExecuteReader();
+            this.listaClientes = new List<ClienteEmpleador>();
+
+            while (drClientes.Read())
+            {
+                ClienteEmpleador clienteEmp = new ClienteEmpleador();
+                clienteEmp.IdClienteEmpleador = int.Parse(drClientes["id_cliente_empleador"].ToString());
+                clienteEmp.NombreCompania = drClientes["nombre_compania"].ToString();
+                clienteEmp.Direccion = drClientes["direccion"].ToString();
+                clienteEmp.Ciudad = drClientes["ciudad"].ToString();
+                clienteEmp.Provincia = drClientes["provincia"].ToString();
+                clienteEmp.CodigoPostal = int.Parse(drClientes["codigo_postal"].ToString());
+
+                listaClientes.Add(clienteEmp);
+            }//while
+            conexion.Close();
+
+            return listaClientes;
+        }
+
+        public ClienteEmpleador GetClientePorID(int idCliente)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador where id_cliente="+idCliente, conexion);
+            conexion.Open();
+            SqlDataReader drClientes = cmdClientes.ExecuteReader();
+            ClienteEmpleador clienteEmp = new ClienteEmpleador();
+
+            while (drClientes.Read())
+            {
+                clienteEmp.IdClienteEmpleador = int.Parse(drClientes["id_cliente_empleador"].ToString());
+                clienteEmp.NombreCompania = drClientes["nombre_compania"].ToString();
+                clienteEmp.Direccion = drClientes["direccion"].ToString();
+                clienteEmp.Ciudad = drClientes["ciudad"].ToString();
+                clienteEmp.Provincia = drClientes["provincia"].ToString();
+                clienteEmp.CodigoPostal = int.Parse(drClientes["codigo_postal"].ToString());
+
+            }//while
+            conexion.Close();
+
+            return clienteEmp;
         }
     }
 }

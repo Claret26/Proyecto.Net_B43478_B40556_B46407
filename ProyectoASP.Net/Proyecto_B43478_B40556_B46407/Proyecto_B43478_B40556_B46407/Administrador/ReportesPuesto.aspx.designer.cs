@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_B43478_B40556_B46407 {
+namespace Proyecto_B43478_B40556_B46407.Administrador {
     
     
-    public partial class IniciarSesion {
+    public partial class ReportesPuesto {
         
         /// <summary>
         /// Label1 control.
@@ -22,15 +22,6 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// tbUsuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUsuario;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -40,30 +31,48 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// tbContrasena control.
+        /// lblNombrePuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbContrasena;
+        protected global::System.Web.UI.WebControls.Label lblNombrePuesto;
         
         /// <summary>
-        /// btnIniciarSesion control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// alertUsuarioIncorrecto control.
+        /// lblCompania control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertUsuarioIncorrecto;
+        protected global::System.Web.UI.WebControls.Label lblCompania;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// gvEntrevistas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvEntrevistas;
     }
 }
