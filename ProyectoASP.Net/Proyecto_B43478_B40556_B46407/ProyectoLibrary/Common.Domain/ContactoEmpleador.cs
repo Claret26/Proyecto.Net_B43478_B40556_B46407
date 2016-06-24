@@ -24,7 +24,7 @@ namespace ProyectoLibrary.Common.Domain
         {
 
         }
-        
+
         public ContactoEmpleador()
         {
 

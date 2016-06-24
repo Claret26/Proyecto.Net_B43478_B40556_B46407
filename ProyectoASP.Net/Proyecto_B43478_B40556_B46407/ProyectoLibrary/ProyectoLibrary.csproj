@@ -45,6 +45,7 @@
     <Compile Include="Common.Domain\CategoriaPuesto.cs" />
     <Compile Include="Common.Domain\ClienteEmpleador.cs" />
     <Compile Include="Common.Domain\ContactoEmpleador.cs" />
+    <Compile Include="Common.Domain\Email.cs" />
     <Compile Include="Common.Domain\Empleado.cs" />
     <Compile Include="Common.Domain\EntrevistaProgramada.cs" />
     <Compile Include="Common.Domain\EspecialidadSolicitud.cs" />
@@ -55,11 +56,11 @@
     <Compile Include="Common.Domain\Rol.cs" />
     <Compile Include="Common.Domain\SolicitantePuestoOfertado.cs" />
     <Compile Include="Common.Domain\SolicitanteTrabajo.cs" />
+    <Compile Include="DataAccess\ClienteEmpleadorData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="DataAccess\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

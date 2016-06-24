@@ -9,17 +9,17 @@ namespace ProyectoLibrary.Common.Domain
     public class ClienteEmpleador
     {
         private int idClienteEmpleador;
-        private String nombreCliente;
+        private String nombreCompania;
         private String direccion;
         private String ciudad;
         private String provincia;
         private int codigoPostal;
 
-        public ClienteEmpleador(int idClienteEmpleador, String nombreCliente, String direccion, String ciudad,
+        public ClienteEmpleador(int idClienteEmpleador, String nombreCompania, String direccion, String ciudad,
              String provincia, int codigoPostal)
         {
             this.IdClienteEmpleador = idClienteEmpleador;
-            this.NombreCliente = nombreCliente;
+            this.nombreCompania = nombreCompania;
             this.Direccion = direccion;
             this.Ciudad = ciudad;
             this.Provincia = provincia;
@@ -43,16 +43,16 @@ namespace ProyectoLibrary.Common.Domain
             }
         }
 
-        public string NombreCliente
+        public string NombreCompania
         {
             get
             {
-                return nombreCliente;
+                return nombreCompania;
             }
 
             set
             {
-                nombreCliente = value;
+                nombreCompania = value;
             }
         }
 
