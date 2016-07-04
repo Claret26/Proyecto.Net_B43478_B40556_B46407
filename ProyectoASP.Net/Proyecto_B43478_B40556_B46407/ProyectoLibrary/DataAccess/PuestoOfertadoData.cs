@@ -83,13 +83,13 @@ namespace ProyectoLibrary.DataAccess
         public PuestoOfertado GetPuestoPorId(int codPuesto)
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlCommand cmdPuestosCompania = new SqlCommand("Select clave_puesto, descripcion_puesto, experiencia_requerida, abierto, numero_vacantes, dias_laborar, hora_entrada, hora_salida, sueldo, provincia, ciudad, id_cliente_empleador, cod_categoria FROM Puesto_Ofertado where clave_puesto="+codPuesto, conexion);
+            SqlCommand cmdPuestosCompania = new SqlCommand("Select clave_puesto, descripcion_puesto, experiencia_requerida, abierto, numero_vacantes, dias_laborar, hora_entrada, hora_salida, sueldo, provincia, ciudad, id_cliente_empleador, cod_categoria FROM Puesto_Ofertado where clave_puesto=" + codPuesto, conexion);
             conexion.Open();
             SqlDataReader drPuestos = cmdPuestosCompania.ExecuteReader();
             PuestoOfertado puesto = new PuestoOfertado();
 
             while (drPuestos.Read())
-            {   
+            {
                 puesto.ClavePuesto = int.Parse(drPuestos["clave_puesto"].ToString());
                 puesto.DescripcionPuesto = drPuestos["descripcion_puesto"].ToString();
                 puesto.ExperienciaRequerida = drPuestos["experiencia_requerida"].ToString();
@@ -103,7 +103,7 @@ namespace ProyectoLibrary.DataAccess
                 puesto.Ciudad = drPuestos["ciudad"].ToString();
                 puesto.ClienteEmpleador.IdClienteEmpleador = int.Parse(drPuestos["id_cliente_empleador"].ToString());
                 puesto.CategoriaPuesto.CodCategoria = int.Parse(drPuestos["cod_categoria"].ToString());
-                
+
             }
             conexion.Close();
 
@@ -112,3 +112,4 @@ namespace ProyectoLibrary.DataAccess
 
     }
 }
+

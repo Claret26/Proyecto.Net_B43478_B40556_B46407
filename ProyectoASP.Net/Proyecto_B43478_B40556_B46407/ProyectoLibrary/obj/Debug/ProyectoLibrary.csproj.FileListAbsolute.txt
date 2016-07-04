@@ -1,0 +1,5 @@
+C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\bin\Debug\ProyectoLibrary.dll
+C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\bin\Debug\ProyectoLibrary.pdb
+C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.dll
+C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.pdb
