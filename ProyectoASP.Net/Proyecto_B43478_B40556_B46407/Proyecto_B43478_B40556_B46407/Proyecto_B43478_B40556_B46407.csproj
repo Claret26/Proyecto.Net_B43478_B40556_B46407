@@ -199,6 +199,11 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Administrador\AgregarClienteEmpleador.aspx" />
+    <Content Include="Administrador\PrincipalAdministrador.aspx" />
+    <Content Include="Administrador\ProductosSolicitados.aspx" />
+    <Content Include="Administrador\Reportes.aspx" />
+    <Content Include="Administrador\ReportesCompania.aspx" />
+    <Content Include="Administrador\ReportesPuesto.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -213,10 +218,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Admin.Master" />
+    <Content Include="Administrador\Web.config" />
+    <Content Include="ClienteEmpleador\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="imagenes\1.2.jpg" />
     <Content Include="IniciarSesion.aspx" />
     <Content Include="Principal.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -252,6 +260,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Solicitante\ConfirmarRegistro.aspx" />
+    <Content Include="Solicitante\Estudios.aspx" />
+    <Content Include="Solicitante\Experiencia.aspx" />
+    <Content Include="Solicitante\RegistraCurriculum.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -259,12 +271,15 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Solicitante\Web.config" />
+    <Content Include="SolicitantePage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -386,6 +401,41 @@
     <Compile Include="Administrador\AgregarClienteEmpleador.aspx.designer.cs">
       <DependentUpon>AgregarClienteEmpleador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\PrincipalAdministrador.aspx.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\PrincipalAdministrador.aspx.designer.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\ProductosSolicitados.aspx.cs">
+      <DependentUpon>ProductosSolicitados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\ProductosSolicitados.aspx.designer.cs">
+      <DependentUpon>ProductosSolicitados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\ReportesCompania.aspx.cs">
+      <DependentUpon>ReportesCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\ReportesCompania.aspx.designer.cs">
+      <DependentUpon>ReportesCompania.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\ReportesPuesto.aspx.cs">
+      <DependentUpon>ReportesPuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\ReportesPuesto.aspx.designer.cs">
+      <DependentUpon>ReportesPuesto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -430,6 +480,13 @@
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -443,6 +500,41 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitantePage.Master.cs">
+      <DependentUpon>SolicitantePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitantePage.Master.designer.cs">
+      <DependentUpon>SolicitantePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\ConfirmarRegistro.aspx.cs">
+      <DependentUpon>ConfirmarRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\ConfirmarRegistro.aspx.designer.cs">
+      <DependentUpon>ConfirmarRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\Estudios.aspx.cs">
+      <DependentUpon>Estudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\Estudios.aspx.designer.cs">
+      <DependentUpon>Estudios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\Experiencia.aspx.cs">
+      <DependentUpon>Experiencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\Experiencia.aspx.designer.cs">
+      <DependentUpon>Experiencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\RegistraCurriculum.aspx.cs">
+      <DependentUpon>RegistraCurriculum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\RegistraCurriculum.aspx.designer.cs">
+      <DependentUpon>RegistraCurriculum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

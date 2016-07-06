@@ -17,7 +17,9 @@ namespace ProyectoLibrary.Common.Domain
 
         public EspecialidadSolicitud()
         {
-
+            this.nivelEstudio = new NivelEstudio();
+            this.areaEspecialidad = new AreaEspecialidad();
+            this.institucionEstudio = new InstitucionEstudio();
         }
 
         public NivelEstudio NivelEstudio

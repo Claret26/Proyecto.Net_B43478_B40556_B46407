@@ -13,6 +13,7 @@ namespace ProyectoLibrary.Common.Domain
         private String rol;
         private int activo;
         private int idUsuario;
+        private String email;
 
         public string NombreUsuario
         {
@@ -76,6 +77,19 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 idUsuario = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                email = value;
             }
         }
 

@@ -21,11 +21,11 @@ namespace ProyectoLibrary.Common.Domain
         private String genero;
         private String estadoCivil;
         private String archivoCurriculo;
-        private String nombreUsuraio;
+        private String nombreUsuario;
         private String clave;
         private Boolean solicitanteActivo;
         private Boolean experienciaLaboral;
-        private LinkedList<EspecialidadSolicitud> listaEspecialidadesSolicitante;
+        private List<EspecialidadSolicitud> listaEspecialidadesSolicitante;
 
         public SolicitanteTrabajo(int idSolicitante, String nombre, String apellidos, String direccion,
            String ciudad, String provincia, int numeroCelular, int telefonoCasa, String email, DateTime fechaNacimiento,
@@ -44,7 +44,7 @@ namespace ProyectoLibrary.Common.Domain
             this.genero = genero;
             this.estadoCivil = estadoCivil;
             this.archivoCurriculo = archivoCurriculo;
-            this.nombreUsuraio = nombreUsuraio;
+            this.NombreUsuario = nombreUsuraio;
             this.clave = clave;
             this.solicitanteActivo = solicitanteActivo;
             this.experienciaLaboral = experienciaLaboral;
@@ -262,7 +262,7 @@ namespace ProyectoLibrary.Common.Domain
             }
         }
 
-        public LinkedList<EspecialidadSolicitud> ListaEspecialidadesSolicitante
+        public List<EspecialidadSolicitud> ListaEspecialidadesSolicitante
         {
             get
             {
@@ -272,6 +272,19 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 listaEspecialidadesSolicitante = value;
+            }
+        }
+
+        public string NombreUsuario
+        {
+            get
+            {
+                return nombreUsuario;
+            }
+
+            set
+            {
+                nombreUsuario = value;
             }
         }
     }

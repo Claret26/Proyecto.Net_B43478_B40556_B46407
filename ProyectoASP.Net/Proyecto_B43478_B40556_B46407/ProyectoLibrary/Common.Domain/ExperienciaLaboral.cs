@@ -15,6 +15,7 @@ namespace ProyectoLibrary.Common.Domain
         private DateTime fechaTermino;
         private String descripcionFunciones;
         private SolicitanteTrabajo solicitanteTrabajo;
+
         public ExperienciaLaboral(int idExperiencia, String empresa, String puesto, DateTime fechaIngreso,
             DateTime fechaTermino, String descripcionFunciones, SolicitanteTrabajo solicitanteTrabajo)
         {
