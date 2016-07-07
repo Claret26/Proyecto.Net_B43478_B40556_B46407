@@ -14,6 +14,7 @@ namespace Proyecto_B43478_B40556_B46407.Administrador
     {
         private String chain = WebConfigurationManager.ConnectionStrings["BuscandoEmpleo"].ConnectionString;
         private PuestoOfertadoData puestoOferData;
+        private ClienteEmpleadorData clienteEmpleadorData;
         private List<PuestoOfertado> listaPuestos;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,9 +23,12 @@ namespace Proyecto_B43478_B40556_B46407.Administrador
             {
                 String codCliente = Request.QueryString["codCliente"];
                 puestoOferData = new PuestoOfertadoData(chain);
+                clienteEmpleadorData = new ClienteEmpleadorData(chain);
 
                 listaPuestos = puestoOferData.GetPuestosPorCompania(int.Parse(codCliente));
+                ClienteEmpleador clienteEmp = clienteEmpleadorData.GetClientePorID(int.Parse(codCliente));
 
+                lblNombreCompania.Text = clienteEmp.NombreCompania;
                 gvPuestos.DataSource = listaPuestos;
                 gvPuestos.DataBind();
             }

@@ -22,6 +22,15 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// NavbarPrincipal control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,22 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl CerrarSesion;
         
         /// <summary>
-        /// form1 control.
+        /// btnCerrarSesion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
+        
+        /// <summary>
+        /// user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor user;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

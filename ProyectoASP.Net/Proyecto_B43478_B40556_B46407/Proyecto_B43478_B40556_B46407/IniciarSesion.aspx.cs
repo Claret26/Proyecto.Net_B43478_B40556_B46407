@@ -67,7 +67,18 @@ namespace Proyecto_B43478_B40556_B46407
 
                 if (urlRegreso == null)
                 {
-                    urlRegreso = "/";
+                    switch (usuarioAux.Rol)
+                    {
+                        case "Administrator":
+                            urlRegreso = "~/Administrador/PrincipalAdministrador.aspx";
+                            break;
+                        case "User":
+                            urlRegreso = "~/Solicitante/PrincipalS.aspx";
+                            break;
+                        case "Employeer":
+                            urlRegreso = "~/ClienteEmpleador/Principal.aspx";
+                            break;
+                    }
                 }
                 Response.Redirect(urlRegreso);
 

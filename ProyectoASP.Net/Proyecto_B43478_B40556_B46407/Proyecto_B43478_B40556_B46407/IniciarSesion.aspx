@@ -14,7 +14,7 @@
     <br />
     <asp:Label ID="Label2" runat="server" Text="Contraseña:" ></asp:Label>
     <br />
-    <asp:TextBox ID="tbContrasena" runat="server" CssClass="form-control"></asp:TextBox>
+    <asp:TextBox ID="tbContrasena" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
     <br />
     <br />
     <asp:Button ID="btnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-primary" OnClick="btnIniciarSesion_Click"/>

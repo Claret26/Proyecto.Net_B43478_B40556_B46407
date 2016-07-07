@@ -18,7 +18,9 @@ namespace ProyectoLibrary.Common.Domain
 
         public EntrevistaProgramada()
         {
-
+            this.solicitanteTrabajo = new SolicitanteTrabajo();
+            this.puestoOfertado = new PuestoOfertado();
+            this.empleado = new Empleado();
         }
 
         public int IdEntrevista

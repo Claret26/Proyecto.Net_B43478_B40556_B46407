@@ -110,5 +110,31 @@ namespace ProyectoLibrary.DataAccess
             }
             return solicitante;
         }
+
+        public SolicitanteTrabajo GetSolicitantePorID(int idSolicitante)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdSolicitantes = new SqlCommand("Select nombre, apellidos, direccion, ciudad, provincia, numero_celular, telefono_casa, email, fecha_nacimiento FROM Solicitante_Trabajo where id_solicitante="+idSolicitante, conexion);
+            conexion.Open();
+            SqlDataReader drSolicitantes = cmdSolicitantes.ExecuteReader();
+            SolicitanteTrabajo solicitante = new SolicitanteTrabajo();
+
+            while (drSolicitantes.Read())
+            {
+                solicitante.IdSolicitante = idSolicitante;
+                solicitante.Nombre = drSolicitantes["nombre"].ToString();
+                solicitante.Apellidos = drSolicitantes["apellidos"].ToString();
+                solicitante.Direccion = drSolicitantes["direccion"].ToString();
+                solicitante.Ciudad = drSolicitantes["ciudad"].ToString();
+                solicitante.Provincia = drSolicitantes["provincia"].ToString();
+                solicitante.NumeroCelular = int.Parse(drSolicitantes["numero_celular"].ToString());
+                solicitante.TelefonoCasa = int.Parse(drSolicitantes["telefono_casa"].ToString());
+                solicitante.FechaNacimiento = Convert.ToDateTime(drSolicitantes["fecha_nacimiento"].ToString());
+
+            }
+            conexion.Close();
+
+            return solicitante;
+        }
     }
 }

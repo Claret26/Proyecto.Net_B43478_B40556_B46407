@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/estyle.css" />
 </head>
 <body>
+    <form id="form1" runat="server">
     <header class="encabezado">
          <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -29,12 +30,20 @@
                 <li id="AgregarCurriculum" runat="server"><a href="#">Agregar mi curriculum</a></li> 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li id="cerrarSesion" runat="server"><a href="IniciarSesion.aspx"><span class="glyphicon glyphicon-user"></span> Cerrar Sesion</a></li>
+                <li id="cerrarSesion" runat="server"><a> <asp:Button ID="btnCerrarSesion" CssClass="btn" runat="server" CausesValidation="false" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" /></a></li>
             </ul>
            </div>
           </nav>
     </header>
-    <form id="form1" runat="server">
+        <div class="col-lg-2">
+        <div id="barraPerfil" class="row">
+            <ul class="nav nav-pills nav-stacked" runat="server">
+                <li id="nombreUsuario" class="active"><a id="user" runat="server" href="#"></a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Entrevistas</a></li>
+            </ul>
+        </div>
+    </div>
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>

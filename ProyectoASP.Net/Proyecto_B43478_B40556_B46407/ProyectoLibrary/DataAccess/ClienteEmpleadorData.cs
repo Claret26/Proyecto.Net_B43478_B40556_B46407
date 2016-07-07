@@ -121,7 +121,7 @@ namespace ProyectoLibrary.DataAccess
         public ClienteEmpleador GetClientePorID(int idCliente)
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador where id_cliente="+idCliente, conexion);
+            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador where id_cliente_empleador="+idCliente, conexion);
             conexion.Open();
             SqlDataReader drClientes = cmdClientes.ExecuteReader();
             ClienteEmpleador clienteEmp = new ClienteEmpleador();

@@ -220,6 +220,7 @@
     <Content Include="Admin.Master" />
     <Content Include="Administrador\Web.config" />
     <Content Include="ClienteEmpleador\Web.config" />
+    <Content Include="AdministratorPage.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="imagenes\1.2.jpg" />
     <Content Include="IniciarSesion.aspx" />
@@ -263,6 +264,7 @@
     <Content Include="Solicitante\ConfirmarRegistro.aspx" />
     <Content Include="Solicitante\Estudios.aspx" />
     <Content Include="Solicitante\Experiencia.aspx" />
+    <Content Include="Solicitante\PrincipalS.aspx" />
     <Content Include="Solicitante\RegistraCurriculum.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -436,6 +438,13 @@
     <Compile Include="Administrador\ReportesPuesto.aspx.designer.cs">
       <DependentUpon>ReportesPuesto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdministratorPage.Master.cs">
+      <DependentUpon>AdministratorPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministratorPage.Master.designer.cs">
+      <DependentUpon>AdministratorPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -528,6 +537,13 @@
     </Compile>
     <Compile Include="Solicitante\Experiencia.aspx.designer.cs">
       <DependentUpon>Experiencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\PrincipalS.aspx.cs">
+      <DependentUpon>PrincipalS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\PrincipalS.aspx.designer.cs">
+      <DependentUpon>PrincipalS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Solicitante\RegistraCurriculum.aspx.cs">
       <DependentUpon>RegistraCurriculum.aspx</DependentUpon>

@@ -158,6 +158,7 @@ C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyec
 C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.csprojResolveAssemblyReference.cache
 C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.dll
 C:\Users\Judith\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.pdb
+C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.csprojResolveAssemblyReference.cache
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\ApplicationInsights.config
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\roslyn\csc.exe
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -236,6 +237,5 @@ C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\P
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.csprojResolveAssemblyReference.cache
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.dll
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\Proyecto_B43478_B40556_B46407\obj\Debug\Proyecto_B43478_B40556_B46407.pdb

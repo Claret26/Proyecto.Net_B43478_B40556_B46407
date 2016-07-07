@@ -11,28 +11,37 @@ namespace ProyectoLibrary.DataAccess
     public class EntrevistasData
     {
         private String cadenaConexion;
-        private List<SolicitantePuestoOfertado> listaEntrevistas;
+        private List<EntrevistaProgramada> listaEntrevistas;
+        private SolicitanteData solicitanteData;
+        private PuestoOfertadoData puestoOfertadoData;
 
         public EntrevistasData(String cadenaConexion)
         {
             this.cadenaConexion = cadenaConexion;
+            solicitanteData = new SolicitanteData(cadenaConexion);
+            puestoOfertadoData = new PuestoOfertadoData(cadenaConexion);
         }
 
-        public List<SolicitantePuestoOfertado> GetEntrevistasPorPuesto(int codPuesto)
+        public List<EntrevistaProgramada> GetEntrevistasPorPuesto(int codPuesto)
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlCommand cmdPuestosCompania = new SqlCommand("Select id_solicitante FROM Solicitante_PuestoOfertado where clave_puesto=" + codPuesto, conexion);
+            SqlCommand cmdEntrevistas = new SqlCommand("Select id_entrevista, tipo_entrevista, fecha_entrevista, hora_entrevista, id_trabajo, id_solicitante, id_empleado FROM Entrevista_Programada where id_trabajo=" + codPuesto, conexion);
             conexion.Open();
-            SqlDataReader drPuestos = cmdPuestosCompania.ExecuteReader();
-            this.listaEntrevistas = new List<SolicitantePuestoOfertado>();
+            SqlDataReader drEntrevistas = cmdEntrevistas.ExecuteReader();
+            this.listaEntrevistas = new List<EntrevistaProgramada>();
 
-            while (drPuestos.Read())
+            while (drEntrevistas.Read())
             {
-                SolicitantePuestoOfertado solicPuesto = new SolicitantePuestoOfertado();
-                solicPuesto.SolicitanteTrabajo.IdSolicitante = int.Parse(drPuestos["id_solicitante"].ToString());
-                //Cambiar variable de activo y crear metodo para traer los datos del solicitante
-                listaEntrevistas.Add(solicPuesto);
+                EntrevistaProgramada entrevista = new EntrevistaProgramada();
+                entrevista.IdEntrevista = int.Parse(drEntrevistas["id_entrevista"].ToString());
+                entrevista.FechaEntrevista = Convert.ToDateTime(drEntrevistas["fecha_entrevista"].ToString());
+                entrevista.TipoeEntrevista = drEntrevistas["tipo_entrevista"].ToString();
+                entrevista.HoraEntrevista = drEntrevistas["hora_entrevista"].ToString();
+                entrevista.SolicitanteTrabajo = solicitanteData.GetSolicitantePorID(int.Parse(drEntrevistas["id_solicitante"].ToString()));
+                entrevista.PuestoOfertado = puestoOfertadoData.GetPuestoPorId(int.Parse(drEntrevistas["id_trabajo"].ToString()));
+                entrevista.Empleado.IdEmpleado = int.Parse(drEntrevistas["id_empleado"].ToString());
 
+                listaEntrevistas.Add(entrevista);
             }
             conexion.Close();
 

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/estyle.css" />
 </head>
 <body>
+    <form id="form1" runat="server">
     <header class="encabezado">
          <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -27,7 +28,7 @@
                     <li id="AgregarEmpresa" runat="server"><a href="Administrador/PrincipalAdministrador.aspx">Agregar mi empresa</a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="CerrarSesion" runat="server"><a href="IniciarSesion.aspx"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
+                    <li id="CerrarSesion" runat="server"><a ><asp:Button ID="btnCerrarSesion" CssClass="btn" runat="server" CausesValidation="false" Text="Cerrar Sesión" OnClick="btnCerrarSesion_Click" /></a></li>
                 </ul>
             </div>
         </nav>
@@ -35,14 +36,14 @@
     <div class="col-lg-2">
         <div id="barraPerfil" class="row">
             <ul class="nav nav-pills nav-stacked" runat="server">
-                <li class="active"><a href="#">Administrador</a></li>
+                <li id="nombreUsuario" class="active"><a id="user" runat="server"  href="#">Administrador</a></li>
                 <li><a href="#">Puestos Solicitados</a></li>
                 <li><a href="#">Entrevistas</a></li>
                 <li><a href="Reportes.aspx">Reportes</a></li>
             </ul>
         </div>
     </div>
-    <form id="form1" runat="server">
+    
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
