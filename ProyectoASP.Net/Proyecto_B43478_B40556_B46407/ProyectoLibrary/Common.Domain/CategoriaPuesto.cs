@@ -10,6 +10,8 @@ namespace ProyectoLibrary.Common.Domain
     {
         private int codCategoria;
         private String nombreCategoria;
+        private int cantidadPuestos;
+
         public CategoriaPuesto(int codCategoria, String nombreCategoria)
         {
             this.CodCategoria = codCategoria;
@@ -43,6 +45,18 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 nombreCategoria = value;
+            }
+        }
+        public int CantidadPuestos
+        {
+            get
+            {
+                return cantidadPuestos;
+            }
+
+            set
+            {
+                cantidadPuestos = value;
             }
         }
     }

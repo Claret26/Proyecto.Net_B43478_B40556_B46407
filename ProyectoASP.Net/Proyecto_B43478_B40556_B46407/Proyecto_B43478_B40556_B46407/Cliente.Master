@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SolicitantePage.master.cs" Inherits="Proyecto_B43478_B40556_B46407.SolicitantePage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Cliente.master.cs" Inherits="Proyecto_B43478_B40556_B46407.Cliente" %>
 
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
             </div>
             <ul id="NavbarPrincipal" class="nav navbar-nav" runat="server">
                 <li id="Home" class="active" runat="server"><a href="~/Principal.aspx">Home</a></li>
-                <li runat="server"><a href="Principal.aspx" id="Inicio">Inicio</a></li>
+                <li runat="server"><a href="~/Principal.aspx" id="Inicio">Inicio</a></li>
                 <li id="AgregarCurriculum" runat="server"><a href="#">Agregar mi curriculum</a></li> 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -39,8 +39,7 @@
         <div id="barraPerfil" class="row">
             <ul class="nav nav-pills nav-stacked" runat="server">
                 <li id="nombreUsuario" class="active"><a id="user" runat="server" href="#"></a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Entrevistas</a></li>
+                <li><a href="#">Agregar Puesto</a></li>
             </ul>
         </div>
     </div>
@@ -51,4 +50,3 @@
     </form>
 </body>
 </html>
-

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_B43478_B40556_B46407 {
+namespace Proyecto_B43478_B40556_B46407.EmpresaEmpleadora {
     
     
-    public partial class Principal {
+    public partial class MostrarPuestos {
         
         /// <summary>
         /// label3 control.
@@ -22,31 +22,22 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
-        /// ddlCategorias control.
+        /// labelCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategorias;
+        protected global::System.Web.UI.WebControls.Label labelCategoria;
         
         /// <summary>
-        /// tbPalabra control.
+        /// labelCantidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPalabra;
-        
-        /// <summary>
-        /// btnBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.Label labelCantidad;
         
         /// <summary>
         /// label2 control.
@@ -65,23 +56,5 @@ namespace Proyecto_B43478_B40556_B46407 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvPuestos;
-        
-        /// <summary>
-        /// label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
-        
-        /// <summary>
-        /// gvOfertados control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOfertados;
     }
 }

@@ -199,6 +199,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Administrador\AgregarClienteEmpleador.aspx" />
+    <Content Include="Administrador\AgregarContactoEmpleador.aspx" />
     <Content Include="Administrador\PrincipalAdministrador.aspx" />
     <Content Include="Administrador\ProductosSolicitados.aspx" />
     <Content Include="Administrador\Reportes.aspx" />
@@ -209,6 +210,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\estyle.css" />
+    <Content Include="EmpresaEmpleadora\AgregarPuestoTrabajo.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -219,8 +221,10 @@
     </Content>
     <Content Include="Admin.Master" />
     <Content Include="Administrador\Web.config" />
-    <Content Include="ClienteEmpleador\Web.config" />
+    <Content Include="EmpresaEmpleadora\Web.config" />
     <Content Include="AdministratorPage.Master" />
+    <Content Include="Cliente.Master" />
+    <Content Include="Principal.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="imagenes\1.2.jpg" />
     <Content Include="IniciarSesion.aspx" />
@@ -264,6 +268,7 @@
     <Content Include="Solicitante\ConfirmarRegistro.aspx" />
     <Content Include="Solicitante\Estudios.aspx" />
     <Content Include="Solicitante\Experiencia.aspx" />
+    <Content Include="Solicitante\MostrarPuestos.aspx" />
     <Content Include="Solicitante\PrincipalS.aspx" />
     <Content Include="Solicitante\RegistraCurriculum.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -403,6 +408,13 @@
     <Compile Include="Administrador\AgregarClienteEmpleador.aspx.designer.cs">
       <DependentUpon>AgregarClienteEmpleador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\AgregarContactoEmpleador.aspx.cs">
+      <DependentUpon>AgregarContactoEmpleador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\AgregarContactoEmpleador.aspx.designer.cs">
+      <DependentUpon>AgregarContactoEmpleador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\PrincipalAdministrador.aspx.cs">
       <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -456,6 +468,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Cliente.Master.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente.Master.designer.cs">
+      <DependentUpon>Cliente.Master</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -469,6 +488,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaEmpleadora\AgregarPuestoTrabajo.aspx.cs">
+      <DependentUpon>AgregarPuestoTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpresaEmpleadora\AgregarPuestoTrabajo.aspx.designer.cs">
+      <DependentUpon>AgregarPuestoTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -487,6 +513,13 @@
     </Compile>
     <Compile Include="Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
@@ -537,6 +570,13 @@
     </Compile>
     <Compile Include="Solicitante\Experiencia.aspx.designer.cs">
       <DependentUpon>Experiencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitante\MostrarPuestos.aspx.cs">
+      <DependentUpon>MostrarPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\MostrarPuestos.aspx.designer.cs">
+      <DependentUpon>MostrarPuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Solicitante\PrincipalS.aspx.cs">
       <DependentUpon>PrincipalS.aspx</DependentUpon>

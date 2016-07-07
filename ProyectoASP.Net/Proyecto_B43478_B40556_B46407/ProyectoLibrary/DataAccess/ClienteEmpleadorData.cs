@@ -13,6 +13,7 @@ namespace ProyectoLibrary.DataAccess
 
         private String cadenaConexion;
         private List<ClienteEmpleador> listaClientes;
+        private int idCliente;
 
         public ClienteEmpleadorData(String cadenaConexion)
         {
@@ -50,7 +51,7 @@ namespace ProyectoLibrary.DataAccess
             contactoEmpleador.IdContacto = Int32.Parse(cmdInsertarContactoEmpleador.Parameters["@id_contacto"].Value.ToString());
         }
 
-        public ClienteEmpleador InsertarClienteEmpleador(ClienteEmpleador clienteEmpleador, ContactoEmpleador contactoEmpleador)
+        public ContactoEmpleador InsertarClienteEmpleador(ContactoEmpleador contactoEmpleador)
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
 
@@ -63,12 +64,15 @@ namespace ProyectoLibrary.DataAccess
             cmdInsertarClienteEmpleador.CommandTimeout = 0;
             cmdInsertarClienteEmpleador.Connection = conexion;
 
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@id_cliente_empleador", clienteEmpleador.IdClienteEmpleador));
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@nombre_compania", clienteEmpleador.NombreCompania));
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@direccion", clienteEmpleador.Direccion));
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@ciudad", clienteEmpleador.Ciudad));
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@provincia", clienteEmpleador.Provincia));
-            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@codigo_postal", clienteEmpleador.CodigoPostal));
+            SqlParameter parIdCliente = new SqlParameter("@id_cliente_empleador", System.Data.SqlDbType.Int);
+            parIdCliente.Direction = System.Data.ParameterDirection.Output;
+
+            cmdInsertarClienteEmpleador.Parameters.Add(parIdCliente);
+            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@nombre_compania", contactoEmpleador.ClienteEmpleador.NombreCompania));
+            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@direccion", contactoEmpleador.ClienteEmpleador.Direccion));
+            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@ciudad", contactoEmpleador.ClienteEmpleador.Ciudad));
+            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@provincia", contactoEmpleador.ClienteEmpleador.Provincia));
+            cmdInsertarClienteEmpleador.Parameters.Add(new SqlParameter("@codigo_postal", contactoEmpleador.ClienteEmpleador.CodigoPostal));
 
             try
             {
@@ -76,7 +80,11 @@ namespace ProyectoLibrary.DataAccess
                 transaccion = conexion.BeginTransaction();
                 cmdInsertarClienteEmpleador.Transaction = transaccion;
                 cmdInsertarClienteEmpleador.ExecuteNonQuery();
+                contactoEmpleador.ClienteEmpleador.IdClienteEmpleador = Int32.Parse(cmdInsertarClienteEmpleador.Parameters["@id_cliente_empleador"].Value.ToString());
                 InsertarContacto(contactoEmpleador, transaccion, conexion);
+                Email correo = new Email();
+                String cuerpo = "Te damos la bienvenida a Proyecto Bolsa de Empleo. Acontinuación encontrará sus datos:\n" + "Usuario: " + contactoEmpleador.NombreUsuario + "\n" + "Clave de Acceso: " + contactoEmpleador.ClaveAcceso;
+                correo.enviarMensaje("lenguajesbolsaempleo@gmail.com", "bolsaEmpleo..", contactoEmpleador.Email, cuerpo);
                 transaccion.Commit();
             }
             catch (Exception ex)
@@ -90,7 +98,7 @@ namespace ProyectoLibrary.DataAccess
                 conexion.Close();
                 conexion.Dispose();
             }
-            return clienteEmpleador;
+            return contactoEmpleador;
         }
 
         public List<ClienteEmpleador> GetClientesEmpleadores()
@@ -121,7 +129,7 @@ namespace ProyectoLibrary.DataAccess
         public ClienteEmpleador GetClientePorID(int idCliente)
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador where id_cliente_empleador="+idCliente, conexion);
+            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador, nombre_compania, direccion, ciudad, provincia, codigo_postal from Cliente_Empleador where id_cliente_empleador=" + idCliente, conexion);
             conexion.Open();
             SqlDataReader drClientes = cmdClientes.ExecuteReader();
             ClienteEmpleador clienteEmp = new ClienteEmpleador();
@@ -137,6 +145,24 @@ namespace ProyectoLibrary.DataAccess
 
             }//while
             conexion.Close();
+
+            return clienteEmp;
+        }
+        public ClienteEmpleador GetClientePorUsuario(String nombreUsuario)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdClientes = new SqlCommand("SELECT id_cliente_empleador from Contacto_Empleador where nombre_usuario= '"+nombreUsuario+"'", conexion);
+            conexion.Open();
+            SqlDataReader drClientes = cmdClientes.ExecuteReader();
+            ClienteEmpleador clienteEmp = new ClienteEmpleador();
+
+            while (drClientes.Read())
+            {
+                idCliente = int.Parse(drClientes["id_cliente_empleador"].ToString());
+
+            }//while
+            conexion.Close();
+            clienteEmp = GetClientePorID(idCliente);
 
             return clienteEmp;
         }

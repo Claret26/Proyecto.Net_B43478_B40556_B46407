@@ -76,7 +76,7 @@ namespace Proyecto_B43478_B40556_B46407
                             urlRegreso = "~/Solicitante/PrincipalS.aspx";
                             break;
                         case "Employeer":
-                            urlRegreso = "~/ClienteEmpleador/Principal.aspx";
+                            urlRegreso = "~/EmpresaEmpleadora/AgregarPuestoTrabajo.aspx";
                             break;
                     }
                 }
