@@ -62,7 +62,7 @@
 
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <asp:Button ID="btnConcursar" class="btn btn-success btn-block" runat="server" Text="Concursar" />
+                    <asp:Button ID="btnConcursar" class="btn btn-success btn-block" runat="server" Text="Concursar" OnClick="btnConcursar_Click" />
                 </div>
                 <div class="col-sm-2"></div>
            

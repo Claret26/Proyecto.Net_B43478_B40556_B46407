@@ -63,6 +63,7 @@
     <Compile Include="DataAccess\NivelEstudioData.cs" />
     <Compile Include="DataAccess\PuestoOfertadoData.cs" />
     <Compile Include="DataAccess\SolicitanteData.cs" />
+    <Compile Include="DataAccess\SolicitantePuestoData.cs" />
     <Compile Include="DataAccess\UsuarioData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

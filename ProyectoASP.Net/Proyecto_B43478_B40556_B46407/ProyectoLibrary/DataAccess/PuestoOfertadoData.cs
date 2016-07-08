@@ -178,6 +178,36 @@ namespace ProyectoLibrary.DataAccess
             return puesto;
         }
 
+        public PuestoOfertado GetPuestoPorNombreYCompania(String nombrePuesto, String empresa)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdPuestosCompania = new SqlCommand("Select Puesto_Ofertado.clave_puesto, Puesto_Ofertado.descripcion_puesto, Puesto_Ofertado.experiencia_requerida, Puesto_Ofertado.abierto, Puesto_Ofertado.numero_vacantes, Puesto_Ofertado.dias_laborar, Puesto_Ofertado.hora_entrada, Puesto_Ofertado.hora_salida, Puesto_Ofertado.sueldo, Puesto_Ofertado.provincia, Puesto_Ofertado.ciudad, Puesto_Ofertado.id_cliente_empleador, Puesto_Ofertado.cod_categoria FROM Puesto_Ofertado, Cliente_Empleador where Puesto_Ofertado.id_cliente_empleador=Cliente_Empleador.id_cliente_empleador and Puesto_Ofertado.descripcion_puesto='" + nombrePuesto + "' and Cliente_Empleador.nombre_compania='"+empresa+"'", conexion);
+            conexion.Open();
+            SqlDataReader drPuestos = cmdPuestosCompania.ExecuteReader();
+            PuestoOfertado puesto = new PuestoOfertado();
+
+            while (drPuestos.Read())
+            {
+                puesto.ClavePuesto = int.Parse(drPuestos["clave_puesto"].ToString());
+                puesto.DescripcionPuesto = drPuestos["descripcion_puesto"].ToString();
+                puesto.ExperienciaRequerida = drPuestos["experiencia_requerida"].ToString();
+                puesto.Abierto = int.Parse(drPuestos["abierto"].ToString());
+                puesto.NumeroVacantes = int.Parse(drPuestos["numero_vacantes"].ToString());
+                puesto.DiasLaborar = drPuestos["dias_laborar"].ToString();
+                puesto.HoraEntrada = drPuestos["hora_entrada"].ToString();
+                puesto.HoraSalida = drPuestos["hora_salida"].ToString();
+                puesto.Sueldo = float.Parse(drPuestos["sueldo"].ToString());
+                puesto.Provincia = drPuestos["provincia"].ToString();
+                puesto.Ciudad = drPuestos["ciudad"].ToString();
+                puesto.ClienteEmpleador.IdClienteEmpleador = int.Parse(drPuestos["id_cliente_empleador"].ToString());
+                puesto.CategoriaPuesto.CodCategoria = int.Parse(drPuestos["cod_categoria"].ToString());
+
+            }
+            conexion.Close();
+
+            return puesto;
+        }
+
         public PuestoOfertado InsertarPuestoOfertado(PuestoOfertado puestoOfertado)
         {
             SqlConnection conexion = new SqlConnection(this.cadenaConexion);
