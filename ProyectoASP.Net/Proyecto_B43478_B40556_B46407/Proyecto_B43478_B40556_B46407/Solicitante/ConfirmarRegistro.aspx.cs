@@ -14,6 +14,7 @@ namespace Proyecto_B43478_B40556_B46407.Solicitante
     {
         String cadena = WebConfigurationManager.ConnectionStrings["BuscandoEmpleo"].ConnectionString;
         SolicitanteData solicitanteData;
+        private ExperienciaLaboralData experienciaData;
         private SolicitanteTrabajo solicitante;
         private List<EspecialidadSolicitud> listaEspecialidades;
         private List<ExperienciaLaboral> listaExperiencias;
@@ -30,10 +31,17 @@ namespace Proyecto_B43478_B40556_B46407.Solicitante
                 if (rblConfirmaRegistro.SelectedItem.Value.Equals("Si"))
                 {
                     solicitante = (SolicitanteTrabajo)(HttpContext.Current.Session["solicitante"]);
+                    experienciaData = new ExperienciaLaboralData(cadena);
                     listaEspecialidades = (List<EspecialidadSolicitud>)(HttpContext.Current.Session["listaEspecialidades"]);
+                    listaExperiencias = (List<ExperienciaLaboral>)(HttpContext.Current.Session["listaExperiencia"]);
                     solicitante.ListaEspecialidadesSolicitante = listaEspecialidades;
                     solicitanteData = new SolicitanteData(cadena);
-                    solicitanteData.InsertarSolicitante(solicitante);
+                    solicitante = solicitanteData.InsertarSolicitante(solicitante);
+
+                    if (solicitante != null && listaExperiencias != null)
+                    {
+                        experienciaData.InsertaExperiencia(listaExperiencias);
+                    }
                 }
                 else
                 {

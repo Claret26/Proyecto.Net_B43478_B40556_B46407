@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <asp:Label ID="Label1" runat="server" Text="Experiencia Laboral: "></asp:Label><br />
                 <asp:Label ID="Label7" runat="server" Text="¿Tiene experiencia laboral?"></asp:Label><br />
                 <br /><asp:RadioButtonList ID="rblExperiencia"  runat="server" OnSelectedIndexChanged="rblExperiencia_SelectedIndexChanged" AutoPostBack="True">
@@ -23,7 +23,24 @@
                 <asp:Label ID="lblFunciones" runat="server" Text="Funciones:" Visible="false"></asp:Label>
                 <textarea id="txtFunciones" class="form-control" runat="server" cols="20" Visible="false" style="resize:none" rows="5"></textarea><br />
                 <asp:Button ID="btnAgregarExperiencia" CssClass="form-control" Visible="false" runat="server" Text="Agregar Experiencia" OnClick="btnAgregarExperiencia_Click" /><br />
-                <asp:GridView ID="gvExperiencia" CssClass="table table-bordered" runat="server"></asp:GridView>   
+                <asp:GridView ID="gvExperiencia" CssClass="table table-bordered" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                    <Columns>
+                        <asp:BoundField DataField="Empresa" HeaderText="Empresa" />
+                        <asp:BoundField DataField="Puesto" HeaderText="Puesto" />
+                        <asp:BoundField DataField="FechaIngreso" HeaderText="Fecha Ingreso" />
+                        <asp:BoundField DataField="FechaTermino" HeaderText="Fecha Termino" />
+                        <asp:BoundField DataField="DescripcionFunciones" HeaderText="Funciones" />
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#333333" />
+                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#487575" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#275353" />
+                </asp:GridView>   
             </div>
             <div class="col-md-4">
                 <div class="row">

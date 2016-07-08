@@ -121,7 +121,7 @@ namespace Proyecto_B43478_B40556_B46407.Solicitante
             else
             {
                 tbInstitucion.Visible = false;
-                rfvInstitucion.Enabled = true;
+                rfvInstitucion.Enabled = false;
             }
         }
     }

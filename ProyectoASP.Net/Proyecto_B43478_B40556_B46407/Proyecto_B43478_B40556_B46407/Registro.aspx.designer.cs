@@ -130,15 +130,6 @@ namespace Proyecto_B43478_B40556_B46407 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfNombreUsuario;
         
         /// <summary>
-        /// revEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
-        
-        /// <summary>
         /// rfEmail control.
         /// </summary>
         /// <remarks>

@@ -25,7 +25,6 @@
     <div class="col-lg-3">
         <div class="row">
             <br /><asp:RequiredFieldValidator ID="rfNombreUsuario" ControlToValidate="tbNombreUsuario" runat="server" ErrorMessage="Campo requerido">* Campo Requerido</asp:RequiredFieldValidator><br /><br /><br /><br />
-            <!--<asp:RegularExpressionValidator ID="revEmail" ControlToValidate="tbEmail" ValidationExpression="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ [A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$" runat="server" ErrorMessage="RegularExpressionValidator">Formato de email incorrecto</asp:RegularExpressionValidator>-->
             <br /><br /><br /><asp:RequiredFieldValidator ID="rfEmail" ControlToValidate="tbEmail" runat="server" ErrorMessage="Campo requerido">* Campo Requerido</asp:RequiredFieldValidator><br />
             <br /><br /><br /><asp:CompareValidator ID="cvContrasenas" ControlToValidate="tbPassword" ControlToCompare="tbConfirmPassword" Type="String" runat="server">Las contraseñas no coinciden</asp:CompareValidator>
         </div>

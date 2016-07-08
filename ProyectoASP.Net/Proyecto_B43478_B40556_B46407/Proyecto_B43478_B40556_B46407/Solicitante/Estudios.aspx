@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <asp:Label ID="Label1" runat="server" Text="Nivel de estudio"></asp:Label>
                 <asp:DropDownList ID="ddlNivelesDeEstudio" CssClass="form-control" runat="server" OnSelectedIndexChanged="ddlNivelesDeEstudio_SelectedIndexChanged" AutoPostBack="True">
                 </asp:DropDownList><br />
@@ -28,7 +28,24 @@
                 <asp:Label ID="lblEstudios" runat="server" Text="Estudios realizados:" Visible="false"></asp:Label>
                 <br />
                 <br />
-                <asp:GridView ID="gvEstudios" CssClass="table table-responsive" runat="server"></asp:GridView>
+                <asp:GridView ID="gvEstudios" CssClass="table table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
+                    <Columns>
+                        <asp:BoundField DataField="NivelEstudio.DescripcionNivelEstudio" HeaderText="Nivel" />
+                        <asp:BoundField DataField="AnoInicio" HeaderText="Año Inicio" />
+                        <asp:BoundField DataField="AnoFinalizacion" HeaderText="Año Fin" />
+                        <asp:BoundField DataField="InstitucionEstudio.NombreInstitucion" HeaderText="Institución" />
+                        <asp:BoundField DataField="NombreTituloObtenido" HeaderText="Título" />
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#333333" />
+                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#487575" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#275353" />
+                </asp:GridView>
             </div>
             <div class="col-md-4">
                 <div class="row">

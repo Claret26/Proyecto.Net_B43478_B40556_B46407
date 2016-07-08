@@ -59,6 +59,7 @@
     <Compile Include="DataAccess\ClienteEmpleadorData.cs" />
     <Compile Include="DataAccess\EntrevistasData.cs" />
     <Compile Include="DataAccess\EspecialidadData.cs" />
+    <Compile Include="DataAccess\ExperienciaLaboralData.cs" />
     <Compile Include="DataAccess\InstitucionData.cs" />
     <Compile Include="DataAccess\NivelEstudioData.cs" />
     <Compile Include="DataAccess\PuestoOfertadoData.cs" />

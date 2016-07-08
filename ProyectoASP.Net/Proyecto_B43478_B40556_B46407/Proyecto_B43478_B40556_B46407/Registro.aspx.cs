@@ -26,8 +26,8 @@ namespace Proyecto_B43478_B40556_B46407
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            cvContrasenas.Operator = ValidationCompareOperator.Equal;
-            cvContrasenas.Validate();
+           cvContrasenas.Operator = ValidationCompareOperator.Equal;
+           cvContrasenas.Validate();
 
             if (!Page.IsValid)
             {
