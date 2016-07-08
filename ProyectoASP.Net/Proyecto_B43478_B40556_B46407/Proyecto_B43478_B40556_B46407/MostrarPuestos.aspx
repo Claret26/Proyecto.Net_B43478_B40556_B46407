@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SolicitantePage.Master" AutoEventWireup="true" CodeBehind="MostrarPuestos.aspx.cs" Inherits="Proyecto_B43478_B40556_B46407.EmpresaEmpleadora.MostrarPuestos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="MostrarPuestos.aspx.cs" Inherits="Proyecto_B43478_B40556_B46407.EmpresaEmpleadora.MostrarPuestos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -31,7 +31,10 @@
 
              <div class="table-responsive">
 
-                 <asp:GridView ID="gvPuestos" class="table table-striped" runat="server">
+                 <asp:GridView ID="gvPuestos" class="table table-striped" runat="server" OnSelectedIndexChanged="gvPuestos_SelectedIndexChanged">
+                     <Columns>
+                         <asp:CommandField SelectText="Aplicar" ShowSelectButton="True" />
+                     </Columns>
                  </asp:GridView>
 
             </div> 

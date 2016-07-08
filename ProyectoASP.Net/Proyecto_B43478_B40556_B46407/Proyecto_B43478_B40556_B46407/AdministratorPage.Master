@@ -23,8 +23,8 @@
                     <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
                 <ul id="NavbarPrincipal" class="nav navbar-nav" runat="server">
-                    <li id="Home" class="active" runat="server"><a href="~/Principal.aspx">Home</a></li>
-                    <li runat="server"><a href="Principal.aspx" id="Inicio">Inicio</a></li>
+                    <li id="Home" class="active" runat="server"><a href="#">Home</a></li>
+                    <li runat="server"><a href="/Principal.aspx" id="Inicio">Inicio</a></li>
                     <li id="AgregarEmpresa" runat="server"><a href="AgregarClienteEmpleador.aspx">Agregar Empresa</a></li> 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -52,4 +52,5 @@
     </form>
 </body>
 </html>
+
 

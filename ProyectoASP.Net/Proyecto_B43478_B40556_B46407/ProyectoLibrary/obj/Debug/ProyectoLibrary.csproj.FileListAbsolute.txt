@@ -8,3 +8,8 @@ C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\P
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.dll
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.pdb
 C:\Users\Manuel\Documents\GitHub\ProyectoAsp\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\bin\Debug\ProyectoLibrary.dll
+C:\Users\Victor\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\bin\Debug\ProyectoLibrary.pdb
+C:\Users\Victor\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.dll
+C:\Users\Victor\Desktop\Proyecto.Net_B43478_B40556_B46407\ProyectoASP.Net\Proyecto_B43478_B40556_B46407\ProyectoLibrary\obj\Debug\ProyectoLibrary.pdb

@@ -265,10 +265,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Solicitante\Concursar.aspx" />
     <Content Include="Solicitante\ConfirmarRegistro.aspx" />
     <Content Include="Solicitante\Estudios.aspx" />
     <Content Include="Solicitante\Experiencia.aspx" />
-    <Content Include="Solicitante\MostrarPuestos.aspx" />
+    <Content Include="MostrarPuestos.aspx" />
     <Content Include="Solicitante\PrincipalS.aspx" />
     <Content Include="Solicitante\RegistraCurriculum.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -550,6 +551,13 @@
     <Compile Include="SolicitantePage.Master.designer.cs">
       <DependentUpon>SolicitantePage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Solicitante\Concursar.aspx.cs">
+      <DependentUpon>Concursar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitante\Concursar.aspx.designer.cs">
+      <DependentUpon>Concursar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Solicitante\ConfirmarRegistro.aspx.cs">
       <DependentUpon>ConfirmarRegistro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -571,11 +579,11 @@
     <Compile Include="Solicitante\Experiencia.aspx.designer.cs">
       <DependentUpon>Experiencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Solicitante\MostrarPuestos.aspx.cs">
+    <Compile Include="MostrarPuestos.aspx.cs">
       <DependentUpon>MostrarPuestos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Solicitante\MostrarPuestos.aspx.designer.cs">
+    <Compile Include="MostrarPuestos.aspx.designer.cs">
       <DependentUpon>MostrarPuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Solicitante\PrincipalS.aspx.cs">

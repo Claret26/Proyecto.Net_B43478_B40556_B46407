@@ -59,9 +59,9 @@ namespace Proyecto_B43478_B40556_B46407
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Solicitante/MostrarPuestos.aspx?codCategoria=" + ddlCategorias.SelectedValue +
+            Response.Redirect("~/MostrarPuestos.aspx?codCategoria=" + ddlCategorias.SelectedValue +
                                                                    "&categoria=" + ddlCategorias.SelectedItem.Text +
-                                                                   "&palabra=" + tbPalabra.Text);
+                                                                  "&palabra=" + tbPalabra.Text);
         }
     }
 }

@@ -84,5 +84,15 @@ namespace Proyecto_B43478_B40556_B46407.EmpresaEmpleadora
             grid.DataSource = dt;
             grid.DataBind();
         }
+
+        protected void gvPuestos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = gvPuestos.SelectedRow;
+            String puesto = row.Cells[1].Text;
+            String empresa = row.Cells[2].Text;
+
+            Response.Redirect("/Solicitante/Concursar.aspx?puesto=" + puesto +
+                                                           "&empresa=" + empresa);
+        }
     }
 }

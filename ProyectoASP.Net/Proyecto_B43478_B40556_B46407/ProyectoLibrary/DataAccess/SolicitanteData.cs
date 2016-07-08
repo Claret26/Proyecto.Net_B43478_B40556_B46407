@@ -86,7 +86,7 @@ namespace ProyectoLibrary.DataAccess
                         cmdInstituciones.ExecuteNonQuery();
                         especialidad.InstitucionEstudio.CodInstitucion = int.Parse(cmdInstituciones.Parameters["@cod_institucion"].Value.ToString());
                     }
-                    
+
                     cmdEspecialidades.Parameters.Add(new SqlParameter("@id_solicitante", solicitante.IdSolicitante));
                     cmdEspecialidades.Parameters.Add(new SqlParameter("@cod_nivel_estudio", especialidad.NivelEstudio.CodNivelEstudio));
                     cmdEspecialidades.Parameters.Add(new SqlParameter("@cod_area_especialidad", especialidad.AreaEspecialidad.CodAareaEspecialidad));
@@ -114,7 +114,7 @@ namespace ProyectoLibrary.DataAccess
         public SolicitanteTrabajo GetSolicitantePorID(int idSolicitante)
         {
             SqlConnection conexion = new SqlConnection(cadenaConexion);
-            SqlCommand cmdSolicitantes = new SqlCommand("Select nombre, apellidos, direccion, ciudad, provincia, numero_celular, telefono_casa, email, fecha_nacimiento FROM Solicitante_Trabajo where id_solicitante="+idSolicitante, conexion);
+            SqlCommand cmdSolicitantes = new SqlCommand("Select nombre, apellidos, direccion, ciudad, provincia, numero_celular, telefono_casa, email, fecha_nacimiento FROM Solicitante_Trabajo where id_solicitante=" + idSolicitante, conexion);
             conexion.Open();
             SqlDataReader drSolicitantes = cmdSolicitantes.ExecuteReader();
             SolicitanteTrabajo solicitante = new SolicitanteTrabajo();
@@ -125,6 +125,33 @@ namespace ProyectoLibrary.DataAccess
                 solicitante.Nombre = drSolicitantes["nombre"].ToString();
                 solicitante.Apellidos = drSolicitantes["apellidos"].ToString();
                 solicitante.Direccion = drSolicitantes["direccion"].ToString();
+                solicitante.Ciudad = drSolicitantes["ciudad"].ToString();
+                solicitante.Provincia = drSolicitantes["provincia"].ToString();
+                solicitante.NumeroCelular = int.Parse(drSolicitantes["numero_celular"].ToString());
+                solicitante.TelefonoCasa = int.Parse(drSolicitantes["telefono_casa"].ToString());
+                solicitante.FechaNacimiento = Convert.ToDateTime(drSolicitantes["fecha_nacimiento"].ToString());
+
+            }
+            conexion.Close();
+
+            return solicitante;
+        }
+
+        public SolicitanteTrabajo GetSolicitantePorUsuario(String usuario)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdSolicitantes = new SqlCommand("Select id_solicitante, nombre, apellidos, direccion, ciudad, provincia, numero_celular, telefono_casa, email, fecha_nacimiento FROM Solicitante_Trabajo where nombre_usuario='" + usuario + "'", conexion);
+            conexion.Open();
+            SqlDataReader drSolicitantes = cmdSolicitantes.ExecuteReader();
+            SolicitanteTrabajo solicitante = new SolicitanteTrabajo();
+
+            while (drSolicitantes.Read())
+            {
+                solicitante.IdSolicitante = int.Parse(drSolicitantes["id_solicitante"].ToString());
+                solicitante.Nombre = drSolicitantes["nombre"].ToString();
+                solicitante.Apellidos = drSolicitantes["apellidos"].ToString();
+                solicitante.Direccion = drSolicitantes["direccion"].ToString();
+                solicitante.Email = drSolicitantes["email"].ToString();
                 solicitante.Ciudad = drSolicitantes["ciudad"].ToString();
                 solicitante.Provincia = drSolicitantes["provincia"].ToString();
                 solicitante.NumeroCelular = int.Parse(drSolicitantes["numero_celular"].ToString());
