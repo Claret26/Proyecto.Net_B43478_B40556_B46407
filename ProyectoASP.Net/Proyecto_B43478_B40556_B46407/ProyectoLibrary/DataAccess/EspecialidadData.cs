@@ -38,5 +38,89 @@ namespace ProyectoLibrary.DataAccess
 
             return listaAreasEspecialidad;
         }
+
+        public void EliminarEspecialidad(int idEspecilidad, int idsolicitante)
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+
+            SqlTransaction transaccion = null;
+
+            SqlCommand cmdInsertarMedico = new SqlCommand();
+            cmdInsertarMedico.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdInsertarMedico.CommandText = "EliminaEspecialidad";
+
+            cmdInsertarMedico.CommandTimeout = 0;
+            cmdInsertarMedico.Connection = conexion;
+
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@idEspecilidad", idEspecilidad));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@idSolicitante", idsolicitante));
+
+            try
+            {
+                conexion.Open();
+                transaccion = conexion.BeginTransaction();
+                cmdInsertarMedico.Transaction = transaccion;
+                cmdInsertarMedico.ExecuteNonQuery();
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                // si algo fallo deshacemos todo
+                transaccion.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+                conexion.Dispose();
+            }
+        }
+
+        public EspecialidadSolicitud InsertarEspecialidad(EspecialidadSolicitud especialidadSolicitud)
+        {
+            SqlConnection conexion = new SqlConnection(this.cadenaConexion);
+
+            SqlTransaction transaccion = null;
+
+            SqlCommand cmdInsertarMedico = new SqlCommand();
+            cmdInsertarMedico.CommandType = System.Data.CommandType.StoredProcedure;
+            cmdInsertarMedico.CommandText = "InsertarEspecialidadS";
+
+            cmdInsertarMedico.CommandTimeout = 0;
+            cmdInsertarMedico.Connection = conexion;
+
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@idSolicitante", especialidadSolicitud.Solicitante));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@codNivelEstudio", especialidadSolicitud.NivelEstudio.CodNivelEstudio));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@codAreaEspecialidad", especialidadSolicitud.AreaEspecialidad.CodAareaEspecialidad));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@anoInicio", especialidadSolicitud.AnoInicio));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@anoFin", especialidadSolicitud.AnoFinalizacion));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@codInstitucion", especialidadSolicitud.InstitucionEstudio.CodInstitucion));
+            cmdInsertarMedico.Parameters.Add(new SqlParameter("@nombreTitulo", especialidadSolicitud.NombreTituloObtenido));
+
+            try
+            {
+                conexion.Open();
+                transaccion = conexion.BeginTransaction();
+                cmdInsertarMedico.Transaction = transaccion;
+                cmdInsertarMedico.ExecuteNonQuery();
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                // si algo fallo deshacemos todo
+                transaccion.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+                conexion.Dispose();
+            }
+
+
+
+            return especialidadSolicitud;
+
+        }
     }
 }

@@ -8,6 +8,8 @@ namespace ProyectoLibrary.Common.Domain
 {
     public class EspecialidadSolicitud
     {
+        private int idEspecialidad;
+        private int solicitante;/**/
         private NivelEstudio nivelEstudio;
         private AreaEspecialidad areaEspecialidad;
         private int anoInicio;
@@ -97,6 +99,32 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 nombreTituloObtenido = value;
+            }
+        }
+
+        public int Solicitante
+        {
+            get
+            {
+                return solicitante;
+            }
+
+            set
+            {
+                solicitante = value;
+            }
+        }
+
+        public int IdEspecialidad
+        {
+            get
+            {
+                return idEspecialidad;
+            }
+
+            set
+            {
+                idEspecialidad = value;
             }
         }
     }

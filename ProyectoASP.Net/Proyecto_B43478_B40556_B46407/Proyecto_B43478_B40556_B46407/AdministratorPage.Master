@@ -37,8 +37,8 @@
         <div id="barraPerfil" class="row">
             <ul class="nav nav-pills nav-stacked" runat="server">
                 <li id="nombreUsuario" class="active"><a id="user" runat="server"  href="#">Administrador</a></li>
-                <li><a href="#">Puestos Solicitados</a></li>
-                <li><a href="#">Entrevistas</a></li>
+                <li><a href="/Administrador/PuestosSolicitados.aspx">Puestos Solicitados</a></li>
+                <li><a href="/Administrador/EntrevistasProgramadas">Entrevistas</a></li>
                 <li><a href="Reportes.aspx">Reportes</a></li>
             </ul>
         </div>

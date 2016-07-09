@@ -8,6 +8,7 @@ namespace ProyectoLibrary.Common.Domain
 {
     public class EntrevistaProgramada
     {
+        private int idSolitante;
         private int idEntrevista;
         private String tipoeEntrevista;
         private DateTime fechaEntrevista;
@@ -15,6 +16,7 @@ namespace ProyectoLibrary.Common.Domain
         private SolicitanteTrabajo solicitanteTrabajo;
         private Empleado empleado;
         private PuestoOfertado puestoOfertado;
+        private String lugar;
 
         public EntrevistaProgramada()
         {
@@ -111,6 +113,32 @@ namespace ProyectoLibrary.Common.Domain
             set
             {
                 puestoOfertado = value;
+            }
+        }
+
+        public string Lugar
+        {
+            get
+            {
+                return lugar;
+            }
+
+            set
+            {
+                lugar = value;
+            }
+        }
+
+        public int IdSolitante
+        {
+            get
+            {
+                return idSolitante;
+            }
+
+            set
+            {
+                idSolitante = value;
             }
         }
     }

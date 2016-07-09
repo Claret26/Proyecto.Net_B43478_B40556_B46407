@@ -11,6 +11,9 @@ namespace ProyectoLibrary.DataAccess
     public class SolicitanteData
     {
         private String cadenaConexion;
+        private List<EspecialidadSolicitud> listaEspecialidades;
+        private List<ExperienciaLaboral> listaExperiencias;
+        private List<PuestoOfertado> listaPuestos;
 
 
         public SolicitanteData(String cadenaConexion)
@@ -162,6 +165,132 @@ namespace ProyectoLibrary.DataAccess
             conexion.Close();
 
             return solicitante;
+        }
+
+
+
+
+        public SolicitanteTrabajo GetSolicutantePorNombreUsuario(String nombreUsuario)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdSolicitantes = new SqlCommand("select id_solicitante ,nombre, apellidos, direccion, ciudad, provincia, numero_celular, telefono_casa, Solicitante_Trabajo.email, Solicitante_Trabajo.fecha_nacimiento from Solicitante_Trabajo inner join Usuarios on Solicitante_Trabajo.nombre_usuario = Usuarios.nombre_usuario where Solicitante_Trabajo.nombre_usuario = '" + nombreUsuario + "'", conexion);
+
+            conexion.Open();
+            SqlDataReader drSolicitantes = cmdSolicitantes.ExecuteReader();
+            SolicitanteTrabajo solicitante = new SolicitanteTrabajo();
+
+            while (drSolicitantes.Read())
+            {
+                solicitante.IdSolicitante = int.Parse(drSolicitantes["id_solicitante"].ToString());
+                solicitante.Nombre = drSolicitantes["nombre"].ToString();
+                solicitante.Apellidos = drSolicitantes["apellidos"].ToString();
+                solicitante.Direccion = drSolicitantes["direccion"].ToString();
+                solicitante.Ciudad = drSolicitantes["ciudad"].ToString();
+                solicitante.Provincia = drSolicitantes["provincia"].ToString();
+                solicitante.NumeroCelular = int.Parse(drSolicitantes["numero_celular"].ToString());
+                solicitante.TelefonoCasa = int.Parse(drSolicitantes["telefono_casa"].ToString());
+                solicitante.FechaNacimiento = Convert.ToDateTime(drSolicitantes["fecha_nacimiento"].ToString());
+
+            }
+            conexion.Close();
+
+            return solicitante;
+        }
+
+        public List<EspecialidadSolicitud> GetEspecialidadesPorUsuario(int idSolicitantes)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdSo = new SqlCommand("select nombre_titulo_obtenido, id_especialidad  from Especialidad_Solicitante where id_solicitante = " + idSolicitantes, conexion);
+            conexion.Open();
+            SqlDataReader drEspe = cmdSo.ExecuteReader();
+            this.listaEspecialidades = new List<EspecialidadSolicitud>();
+
+            while (drEspe.Read())
+            {
+                EspecialidadSolicitud espeSolicitud = new EspecialidadSolicitud();
+                espeSolicitud.Solicitante = idSolicitantes;
+                //  espeSolicitud.NivelEstudio.CodNivelEstudio = int.Parse(drEspe["cod_nivel_estudio"].ToString());
+                //  espeSolicitud.AreaEspecialidad.CodAareaEspecialidad = int.Parse(drEspe["cod_area_especialidad"].ToString());
+                //  espeSolicitud.AnoInicio = int.Parse(drEspe["ano_inicio"].ToString());
+                //  espeSolicitud.AnoFinalizacion = int.Parse(drEspe["ano_finalizacion"].ToString());
+                //  espeSolicitud.InstitucionEstudio.CodInstitucion = int.Parse(drEspe["cod_institucion"].ToString());
+                espeSolicitud.NombreTituloObtenido = drEspe["nombre_titulo_obtenido"].ToString();
+                 espeSolicitud.IdEspecialidad = int.Parse(drEspe["id_especialidad"].ToString());
+                listaEspecialidades.Add(espeSolicitud);
+            }
+            conexion.Close();
+            return listaEspecialidades;
+        }
+
+
+        public SolicitanteTrabajo GetSolicutantePorIdSolicidatente(int idSolicitante)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdsoli = new SqlCommand(" select * from Solicitante_Trabajo  where id_solicitante = " + idSolicitante, conexion);
+            conexion.Open();
+            SqlDataReader drSoli = cmdsoli.ExecuteReader();
+            SolicitanteTrabajo solicitante = new SolicitanteTrabajo();
+            while (drSoli.Read())
+            {
+                // solicitante.IdSolicitante = int.Parse(drSolicitante["id_solicitante"].ToString());
+                solicitante.Nombre = drSoli["nombre"].ToString();
+                /* solicitante.Apellidos = drSolicitante["apellidos"].ToString();
+                  solicitante.Direccion = drSolicitante["direccion"].ToString();
+                  solicitante.Ciudad = drSolicitante["ciudad"].ToString();
+                  solicitante.Provincia = drSolicitante["provincia"].ToString();
+                  solicitante.NumeroCelular = int.Parse(drSolicitante["numero_celular"].ToString());
+                  solicitante.TelefonoCasa = int.Parse(drSolicitante["telefono_casa"].ToString());
+                  solicitante.Email = drSolicitante["email"].ToString();
+                  solicitante.FechaNacimiento = DateTime.Parse(drSolicitante["fecha_nacimiento"].ToString());
+                  solicitante.Genero = drSolicitante["genero"].ToString();
+                  solicitante.EstadoCivil = drSolicitante["estado_civil"].ToString();
+                  solicitante.ArchivoCurriculo = drSolicitante["archivo_curriculo"].ToString();
+                  solicitante.NombreUsuario = drSolicitante["nombre_usuario"].ToString();
+                  solicitante.Clave = drSolicitante["clave"].ToString();*/
+            }
+            conexion.Close();
+
+            return solicitante;
+        }
+
+        public List<ExperienciaLaboral> GetExperienciaLaboralSolicitante(int idSolicitante)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdEx = new SqlCommand("select * from Experiencia_Laboral where id_solicitante = " + idSolicitante, conexion);
+            conexion.Open();
+            SqlDataReader drEx = cmdEx.ExecuteReader();
+            this.listaExperiencias = new List<ExperienciaLaboral>();
+
+            while (drEx.Read())
+            {
+                ExperienciaLaboral experiencia = new ExperienciaLaboral();
+                experiencia.Empresa = drEx["empresa"].ToString();
+                experiencia.Puesto = drEx["puesto"].ToString();
+                experiencia.FechaIngreso = DateTime.Parse(drEx["fecha_ingreso"].ToString());
+                experiencia.FechaTermino = DateTime.Parse(drEx["fecha_termino"].ToString());
+                listaExperiencias.Add(experiencia);
+            }
+            conexion.Close();
+            return listaExperiencias;
+        }
+
+        public List<PuestoOfertado> GetPuestosSolicitadosPoSolicitante(int idSolicitante)
+        {
+            SqlConnection conexion = new SqlConnection(cadenaConexion);
+            SqlCommand cmdPu = new SqlCommand("select Puesto_Ofertado.descripcion_puesto, Puesto_Ofertado.clave_puesto from Puesto_Ofertado inner join Solicitante_PuestoOfertado on Puesto_Ofertado.clave_puesto = Solicitante_PuestoOfertado.clave_puesto where Solicitante_PuestoOfertado.id_solicitante = " + idSolicitante, conexion);
+            conexion.Open();
+            SqlDataReader drPu = cmdPu.ExecuteReader();
+            this.listaPuestos = new List<PuestoOfertado>();
+
+            while (drPu.Read())
+            {
+                PuestoOfertado puesto = new PuestoOfertado();
+                puesto.DescripcionPuesto = drPu["descripcion_puesto"].ToString();
+                puesto.ClavePuesto = int.Parse(drPu["clave_puesto"].ToString());
+                listaPuestos.Add(puesto);
+            }
+            conexion.Close();
+            return listaPuestos;
         }
     }
 }
